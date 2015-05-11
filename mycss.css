@@ -95,7 +95,26 @@ width:100%;
 #footer
 {
 text-align:center;
+clear:both;
+}
 
+#leftSearchbar
+{
+	float:left;
+	width: 20%;
+	border: 1px solid #000000;
+}
+#rightSearchbar
+{
+	width: 79%;
+	float:right;
+	border: 1px solid #000000;
+}
+#searchContainer
+{
+	clear:both;
+	width:100%;
+	height: 70%;
 }
 
 li
