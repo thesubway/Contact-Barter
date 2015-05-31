@@ -1,5 +1,6 @@
 <?php
 $name = nil;
+$skill = nil;
 $error = nil;
 $email = nil;
 $users = array();
@@ -9,7 +10,7 @@ if ($_POST["name"]) {
 	mysql_select_db("Contact_Barter");
 	$query = "SELECT * FROM UserData WHERE firstName='".$name."' OR lastName='".$name."' OR userName='".$name."'";
 	if ($result = mysql_query($query, $link)) {
-		echo "num rows: ".mysql_num_rows($result)."</br>";
+		echo "num name rows: ".mysql_num_rows($result)."</br>";
 		while ($row = mysql_fetch_array($result)) {
 			array_push($users,$row);
 		}
@@ -23,9 +24,26 @@ if ($_POST["name"]) {
 		echo "\nquery not working: ".mysql_error();
 	}
 }
+else if ($_GET["skill"]) {
+	$skill = $_GET["skill"];
+	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
+	mysql_select_db("Contact_Barter");
+	$query = "SELECT * FROM UserData WHERE expertiseIn='".$skill."'";
+	if ($result = mysql_query($query, $link)) {
+		echo "num skill rows: ".mysql_num_rows($result)."</br>";
+		while ($row = mysql_fetch_array($result)) {
+			array_push($users,$row);
+		}
+	}
+	else {
+		$error = "Query failed.";
+		echo "\nquery not working: ".mysql_error();
+	}
+}
 else {
 	echo "no one is searching";
 }
+//?name=dan&searchName=Search
 
 echo '<!Doctype html>
 <html>
@@ -53,10 +71,10 @@ echo '<!Doctype html>
 	<h1>Search</h1>
 	<div id="searchContainer">
 		<div id="leftSearchbar">
-			<a href="searchskills.html"><u>cooking</u></a><br>
-			<a href="searchskills.html"><u>cleaning</u></a><br>
-			<a href="searchskills.html"><u>programming</u></a><br>
-			<a href="searchskills.html"><u>dancing</u></a>
+			<a href="searchskills.php?skill=cooking"><u>cooking</u></a><br>
+			<a href="searchskills.php?skill=cleaning"><u>cleaning</u></a><br>
+			<a href="searchskills.php?skill=programming"><u>programming</u></a><br>
+			<a href="searchskills.php?skill=dancing"><u>dancing</u></a>
 		</div>
 		<div id="rightSearchbar">
 			<form method="post">
@@ -65,7 +83,23 @@ echo '<!Doctype html>
 				<input type="submit" name="searchName" value="Search">
 			</form>';
 if ($name != nil) {			
-echo		'<p>Result(s) for '.$name.':</p>
+	echo		'<p>Result(s) for name: '.$name.':</p>
+			';
+	if ($error == nil) {
+		foreach ($users as $eachUser) {
+			echo		'<div id="result1">
+				<img id="user1" src="questionProfile.png" alt="profile image">
+				<div id="userText1"><a href="searchskills.html">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years</div>
+			</div>
+			';
+		}
+	}
+	else {
+		echo "There was a connection error.";
+	}
+}
+else if ($skill != nil) {
+	echo		'<p>Result(s) for skill: '.$skill.':</p>
 			';
 	if ($error == nil) {
 		foreach ($users as $eachUser) {
