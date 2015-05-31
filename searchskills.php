@@ -7,7 +7,7 @@ if ($_POST["name"]) {
 	$name = $_POST["name"];
 	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
 	mysql_select_db("Contact_Barter");
-	$query = "SELECT * FROM UserData WHERE firstName='".$name."'";
+	$query = "SELECT * FROM UserData WHERE firstName='".$name."' OR lastName='".$name."' OR userName='".$name."'";
 	if ($result = mysql_query($query, $link)) {
 		echo "num rows: ".mysql_num_rows($result)."</br>";
 		while ($row = mysql_fetch_array($result)) {
