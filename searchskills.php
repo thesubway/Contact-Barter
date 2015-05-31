@@ -1,4 +1,6 @@
-<!Doctype html>
+<?php
+
+echo '<!Doctype html>
 <html>
 <head>
 <title>SearchSkills</title>
@@ -16,7 +18,7 @@
 		<li><a href="home.html" style="text-decoration:none">Home</a></li>
 		<li><a href="about.html" style="text-decoration:none">About</a></li>
 		<li><a href="user.html" style="text-decoration:none">User</a></li>
-		<li><a href="searchskills.html" style="text-decoration:none">SearchSkills</a></li>
+		<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</a></li>
 		<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>
 		</ul>
 		</div>
@@ -30,9 +32,11 @@
 			<a href="searchskills.html"><u>dancing</u></a>
 		</div>
 		<div id="rightSearchbar">
-			<div id="searchLabel">Search by name:</div>
-			<input type='text'></input>
-			<button>Submit</button>
+			<label id="searchLabel" for="name">Search by name:</label>
+			<form method="post">
+				<input name="name" type='.'text'.'></input>
+				<button>Submit</button>
+			</form>
 			<p>Result(s) for cooking:</p>
 			<div id="result1">
 				<img id="user1" src="questionProfile.png" alt="profile image">
@@ -58,4 +62,5 @@
 		}
 	</script>
 </body>
-</html>
+</html>';
+?>
