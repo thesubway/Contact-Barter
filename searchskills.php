@@ -89,7 +89,9 @@ if ($name != nil) {
 		foreach ($users as $eachUser) {
 			echo		'<div id="result1">
 				<img id="user1" src="questionProfile.png" alt="profile image">
-				<div id="userText1"><a href="searchskills.html">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years</div>
+				<div id="userText1"><a href="searchskills.html">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years
+				<br>'.$eachUser["userName"].'<br>'.$eachUser["expertiseIn"].'
+				</div>
 			</div>
 			';
 		}
@@ -105,7 +107,9 @@ else if ($skill != nil) {
 		foreach ($users as $eachUser) {
 			echo		'<div id="result1">
 				<img id="user1" src="questionProfile.png" alt="profile image">
-				<div id="userText1"><a href="searchskills.html">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years</div>
+				<div id="userText1"><a href="searchskills.html">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years
+				<br>'.$eachUser["userName"].'<br>'.$eachUser["expertiseIn"].'
+				</div>
 			</div>
 			';
 		}
