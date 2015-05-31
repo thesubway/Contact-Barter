@@ -1,4 +1,12 @@
 <?php
+$name = nil;
+if ($_POST["name"]) {
+	$name = $_POST["name"];
+	echo "there is a search for: ".$name;
+}
+else {
+	echo "no one is searching";
+}
 
 echo '<!Doctype html>
 <html>
@@ -32,13 +40,14 @@ echo '<!Doctype html>
 			<a href="searchskills.html"><u>dancing</u></a>
 		</div>
 		<div id="rightSearchbar">
-			<label id="searchLabel" for="name">Search by name:</label>
 			<form method="post">
+				<label id="searchLabel" for="name">Search by name:</label>
 				<input name="name" type='.'text'.'></input>
-				<button>Submit</button>
-			</form>
-			<p>Result(s) for cooking:</p>
-			<div id="result1">
+				<input type="submit" name="searchName" value="Search">
+			</form>';
+if ($name != nil) {			
+echo		'<p>Result(s) for '.$name.':</p>
+			'.'<div id="result1">
 				<img id="user1" src="questionProfile.png" alt="profile image">
 				<div id="userText1"><a href="searchskills.html">Daryl</a><br>5 years</div>
 			</div>
@@ -49,7 +58,9 @@ echo '<!Doctype html>
 			<div id="result2">
 				<img id="user2" src="questionProfile.png" alt="profile image">
 				<div id="userText2"><a href="searchskills.html">Daniel</a><br>0.5 years</div>
-			</div>
+			</div>';
+}
+			echo'
 		</div>
 	</div>
 
