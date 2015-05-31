@@ -1,8 +1,27 @@
 <?php
 $name = nil;
+$error = nil;
+$email = nil;
+$users = array();
 if ($_POST["name"]) {
 	$name = $_POST["name"];
-	echo "there is a search for: ".$name;
+	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
+	mysql_select_db("Contact_Barter");
+	$query = "SELECT * FROM UserData WHERE firstName='".$name."'";
+	if ($result = mysql_query($query, $link)) {
+		echo "num rows: ".mysql_num_rows($result)."</br>";
+		while ($row = mysql_fetch_array($result)) {
+			array_push($users,$row);
+		}
+		//echo "count: ";
+		//print_r($users);
+		echo "</br>";
+	}
+	else {
+		#$myError = mysql_error();
+		$error = "Query failed.";
+		echo "\nquery not working: ".mysql_error();
+	}
 }
 else {
 	echo "no one is searching";
@@ -47,18 +66,19 @@ echo '<!Doctype html>
 			</form>';
 if ($name != nil) {			
 echo		'<p>Result(s) for '.$name.':</p>
-			'.'<div id="result1">
+			';
+	if ($error == nil) {
+		foreach ($users as $eachUser) {
+			echo		'<div id="result1">
 				<img id="user1" src="questionProfile.png" alt="profile image">
-				<div id="userText1"><a href="searchskills.html">Daryl</a><br>5 years</div>
+				<div id="userText1"><a href="searchskills.html">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years</div>
 			</div>
-			<div id="result2">
-				<img id="user2" src="questionProfile.png" alt="profile image">
-				<div id="userText2"><a href="searchskills.html">Mallika</a><br>2 years</div>
-			</div>
-			<div id="result2">
-				<img id="user2" src="questionProfile.png" alt="profile image">
-				<div id="userText2"><a href="searchskills.html">Daniel</a><br>0.5 years</div>
-			</div>';
+			';
+		}
+	}
+	else {
+		echo "There was a connection error.";
+	}
 }
 			echo'
 		</div>
