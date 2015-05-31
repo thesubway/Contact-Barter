@@ -15,13 +15,13 @@
 		<ul>
 		<li><a href="home.html" style="text-decoration:none">Home</a></li>
 		<li><a href="about.html" style="text-decoration:none">About</a></li>
-		<li>User</li>
+		<li><a href="user.html" style="text-decoration:none">User</a></li>
 		<li><a href="searchskills.html" style="text-decoration:none">SearchSkills</a></li>
 		<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>
 		</ul>
 		</div>
 	</div>
-
+	<h1>Search</h1>
 	<div id="searchContainer">
 		<div id="leftSearchbar">
 			<a href="searchskills.html"><u>cooking</u></a><br>
@@ -30,13 +30,32 @@
 			<a href="searchskills.html"><u>dancing</u></a>
 		</div>
 		<div id="rightSearchbar">
+			<div id="searchLabel">Search by name:</div>
 			<input type='text'></input>
-			<p>Frame result</p>
+			<button>Submit</button>
+			<p>Result(s) for cooking:</p>
+			<div id="result1">
+				<img id="user1" src="questionProfile.png" alt="profile image">
+				<div id="userText1"><a href="searchskills.html">Daryl</a><br>5 years</div>
+			</div>
+			<div id="result2">
+				<img id="user2" src="questionProfile.png" alt="profile image">
+				<div id="userText2"><a href="searchskills.html">Mallika</a><br>2 years</div>
+			</div>
+			<div id="result2">
+				<img id="user2" src="questionProfile.png" alt="profile image">
+				<div id="userText2"><a href="searchskills.html">Daniel</a><br>0.5 years</div>
+			</div>
 		</div>
 	</div>
 
 	<div id="footer">
-		<h5>Copyright © 2013,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
+		<h5>Copyright © 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
+	<script type="text/javascript">
+		function _(x) {
+			return document.getElementById(x);
+		}
+	</script>
 </body>
 </html>
