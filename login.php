@@ -52,8 +52,8 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 			<ul>
 				<li><a href="home.html" style="text-decoration:none">Home</a></li>
 				<li><a href="about.html" style="text-decoration:none">About</a></li>
-				<li><a href="#user" style="text-decoration:none">User</li>
-				<li><a href="#searchskills" style="text-decoration:none">SearchSkills</li>
+				<li><a href="user.php" style="text-decoration:none">User</li>
+				<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</li>
 				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>
 			</ul>
 		</div>
@@ -79,7 +79,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 					
 					<br>
 					<a href="#ForgotPassword">Forgot Password?</a>
-					<a href="#NewUser"> | New User?</a>
+					<a href="register_form.php"> | New User?</a>
 				</p>
 				</div>
 		

@@ -3,6 +3,10 @@ session_start();
 require_once 'functions.php';
 $isLoggedIn = false;
 $user = nil;
+if (!$_SESSION['id']>0) {
+	header("Location: login.php"); /* Redirect browser */
+exit();
+}
 if ($_GET['id']) {
 	$isLoggedIn = true;
 	echo $_GET['id'];
@@ -14,10 +18,6 @@ else if ($_SESSION['id'] > 0) {
 	$user = getUser($_SESSION['id']);
 
 	echo $user['email'];
-}
-if (!$_SESSION['id']>0) {
-	header("Location: login.php"); /* Redirect browser */
-exit();
 }
 echo '<!Doctype html>
 <html>

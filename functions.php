@@ -23,7 +23,7 @@ exit();
 else{
 $errorMessage = 'Wrong username or password! Try again!';
 //  print $errorMessage . ' ' . $sql; 
-header("Location: login.php"); /* Redirect browser */
+header("Location: loginFail.php"); /* Redirect browser */
 exit();
 }
 return $errorMessage;

@@ -16,6 +16,17 @@ $conn = new mysqli($servername,$dbName, $userName, $password,$firstName,$lastNam
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+
+
+if(empty($_POST['userName']) ||
+       empty($_POST['lastName']) ||
+       empty($_POST['emailAddress']) ||
+       empty($_POST['firstName']) ||
+       empty($_POST['password'])) {
+       //died('We are sorry, but there appears to be a problem with the form you submitted.');     
+       return false;  
+   }
+
 $sql = "INSERT INTO UserData (firstName, lastName, email,userName,password)
 VALUES ('$firstName','$lastName','$emailAddress','$userName','$password')";
 if (mysql_query($sql) === TRUE) {
