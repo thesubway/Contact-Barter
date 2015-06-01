@@ -1,15 +1,15 @@
 <?php
 //Mallika's php:
-// include the files
-// require_once 'functions.php';
-// require_once 'database.php';
-// $errorMessage = '&nbsp;';
-// if (isset($_POST['userName'])) {
-// $result = doLogin();
-// if ($result != '') {
-// $errorMessage = $result;
-// }
-// }
+//include the files
+require_once 'functions.php';
+require_once 'database.php';
+$errorMessage = '&nbsp;';
+if (isset($_POST['userName'])) {
+$result = doLogin();
+if ($result != '') {
+$errorMessage = $result;
+}
+}
 
 ?>
 <html>

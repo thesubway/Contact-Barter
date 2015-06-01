@@ -4,7 +4,7 @@
 $dbHost = 'localhost'; //database host address
 $dbUser = 'root'; //username and password of database
 $dbPass = 'root';
-$dbName = 'test'; //database name to be connected
+$dbName = 'Contact_Barter'; //database name to be connected
 //this creates you a mysql $dbName database with the configuration as provided above
 $dbConn = mysql_connect ($dbHost, $dbUser, $dbPass) or die ('MySQL connect failed. ' .
 mysql_error());

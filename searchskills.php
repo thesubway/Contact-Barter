@@ -4,6 +4,8 @@ $skill = nil;
 $error = nil;
 $email = nil;
 $users = array();
+session_start();
+echo "session id: ".$_SESSION['id']."<br>";
 if ($_POST["name"]) {
 	$name = $_POST["name"];
 	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
@@ -17,12 +19,14 @@ if ($_POST["name"]) {
 		//echo "count: ";
 		//print_r($users);
 		echo "</br>";
+// 		session_destroy();
 	}
 	else {
 		#$myError = mysql_error();
 		$error = "Query failed.";
 		echo "\nquery not working: ".mysql_error();
 	}
+	
 }
 else if ($_GET["skill"]) {
 	$skill = $_GET["skill"];
