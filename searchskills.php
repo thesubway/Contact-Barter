@@ -38,7 +38,7 @@ else if ($_GET["skill"]) {
 	$skill = $_GET["skill"];
 	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
 	mysql_select_db("Contact_Barter");
-	$query = "SELECT * FROM UserData WHERE expertiseIn='".$skill."'";
+	$query = "SELECT * FROM UserData WHERE expertiseIn LIKE '%".$skill."%'";
 	if ($result = mysql_query($query, $link)) {
 		echo "num skill rows: ".mysql_num_rows($result)."</br>";
 		while ($row = mysql_fetch_array($result)) {

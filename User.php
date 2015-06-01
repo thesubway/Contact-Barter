@@ -15,6 +15,10 @@ else if ($_SESSION['id'] > 0) {
 
 	echo $user['email'];
 }
+if (!$_SESSION['id']>0) {
+	header("Location: login.php"); /* Redirect browser */
+exit();
+}
 echo '<!Doctype html>
 <html>
 <head>
@@ -38,6 +42,9 @@ echo '<!Doctype html>
 				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>';
 if ($_SESSION['id'] > 0) {
 echo '			<li><a href="logout.php" style="text-decoration:none">Logout</a></li>';				
+}
+else {
+echo '			<li><a href="login.php" style="text-decoration:none">Login</a></li>';	
 }
 echo			'</ul>
 		</div>

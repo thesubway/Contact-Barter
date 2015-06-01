@@ -23,8 +23,8 @@ $result = doLogin();
 if ($result != '') {
 	//incorrect password
 $errorMessage = $result;
-	print $errorMessage . ' '; 
-	exit();
+	print 'alert("Incorrect username/password")';
+	//exit();
 }
 else {
 	exit();
@@ -43,7 +43,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 </head>
 
 <body>
-<div id="div1">
+<div id="div50">
 	<div id="topid">
 		<img id="logoid" src="logo.jpg" alt="logo">
 
