@@ -35,8 +35,11 @@ echo '<!Doctype html>
 				<li><a href="about.html" style="text-decoration:none">About</a></li>
 				<li><a href="user.php" style="text-decoration:none">User</a></li>
 				<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</a></li>
-				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>
-			</ul>
+				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>';
+if ($_SESSION['id'] > 0) {
+echo '			<li><a href="logout.php" style="text-decoration:none">Logout</a></li>';				
+}
+echo			'</ul>
 		</div>
 <!-- 	</div> -->
 

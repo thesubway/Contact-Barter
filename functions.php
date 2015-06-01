@@ -14,13 +14,17 @@ $result = dbQuery($sql);
 $row = dbFetchAssoc($result);
 //validate if resultset is empty; if empty then the user credentials does not matched
 if(dbNumRows($result) > 0){
-print 'Welcome '.$row['userName'];
+// print 'Welcome '.$row['userName'];
 session_start();
 $_SESSION['id'] = $row['id'];
+header("Location: user.php"); /* Redirect browser */
+exit();
 }
 else{
-$errorMessage = 'Wrong username or password!';
- print $errorMessage . ' ' . $sql; 
+$errorMessage = 'Wrong username or password! Try again!';
+//  print $errorMessage . ' ' . $sql; 
+header("Location: login.php"); /* Redirect browser */
+exit();
 }
 return $errorMessage;
 }
