@@ -1,4 +1,24 @@
-<!Doctype html>
+<?php
+session_start();
+require_once 'functions.php';
+$isLoggedIn = false;
+$user = nil;
+if ($_SESSION['id'] > 0) {
+	$isLoggedIn = true;
+	$user = getUser($_SESSION['id']);
+
+	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
+	mysql_select_db("Contact_Barter");
+	$query = "SELECT * FROM UserData WHERE id = '".$_SESSION['id']."'";
+// 	if ($result = mysql_query($query, $link)) {
+// 		echo "num name rows: ".mysql_num_rows($result)."</br>";
+// 		$row = mysql_fetch_array($result);
+// 		echo ($row['firstName']);
+// 		echo "</br>";
+// 	}
+	echo $user['email'];
+}
+echo '<!Doctype html>
 <html>
 <head>
 <title>Barter User</title>
@@ -27,32 +47,29 @@
 	
 	
 			<div id="sideSecId">
-			<img id="userimgid" src="myface.jpg" alt="userpic">
+			<img id="userimgid" src="questionProfile.png" alt="userpic">';
+			echo '
 			<h3> Contact Details<h3>
-			<h4>malli.naik@gmail.com</h4>
+			<h4>'.$user['email'].'</h4>
 			</div>
 			
 			<div id="infoid">
-			<h1>Mallika Naik</h1>
+			<h1>'.$user['firstName'].' '.$user['lastName'].'</h1>
 			
 				<h4>About</h4>
 				<p>
-				Mallika lives in London. London is the capital city of England. It is the most populous city in the United Kingdom,
-				with a metropolitan area of over 13 million inhabitants.
-				
-				Standing on the River Thames, London has been a major settlement for two millennia,
-				its history going back to its founding by the Romans, who named it Londinium.
+				'.$user['biography'].'
 				</p>
 				
 				<h4>Expertise:</h4>
 				<p>
-					My strong suits are cooking, painting, programming in Java, scripting languages, dancing: Bharatnatyam and street jazz.
+					'.$user['expertiseIn'].'
 				</p>
 				
 				<h4>Looking to learn:</h4>
 				<p>
-					Programming in Python, singing, craft, socializing, public speaking
-				</p>
+					'.$user['lookingFor'].'
+				</p>'.'
 				
 			</div>
 		
@@ -65,4 +82,5 @@
 </div>
 </body>
 
-</html>
+</html>';
+?>

@@ -4,8 +4,8 @@ $skill = nil;
 $error = nil;
 $email = nil;
 $users = array();
-session_destroy();
 session_start();
+// session_destroy();
 if($_SESSION['id'] <= 0) {
 	echo "currently no session id";
 }

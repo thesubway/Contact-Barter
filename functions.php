@@ -24,4 +24,16 @@ $errorMessage = 'Wrong username or password!';
 }
 return $errorMessage;
 }
+function getUser($inputId) {
+	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
+	mysql_select_db("Contact_Barter");
+	$query = "SELECT * FROM UserData WHERE id = '".$inputId."'";
+	if ($result = mysql_query($query, $link)) {
+		$row = mysql_fetch_array($result);
+		return $row;
+	}
+	else {
+		return nil;
+	}
+}
 ?>
