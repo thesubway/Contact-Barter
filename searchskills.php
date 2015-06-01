@@ -4,8 +4,14 @@ $skill = nil;
 $error = nil;
 $email = nil;
 $users = array();
+session_destroy();
 session_start();
-echo "session id: ".$_SESSION['id']."<br>";
+if($_SESSION['id'] <= 0) {
+	echo "currently no session id";
+}
+else {
+	echo "session id: ".$_SESSION['id']."<br>";
+}
 if ($_POST["name"]) {
 	$name = $_POST["name"];
 	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
