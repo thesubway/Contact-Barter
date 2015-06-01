@@ -3,19 +3,16 @@ session_start();
 require_once 'functions.php';
 $isLoggedIn = false;
 $user = nil;
-if ($_SESSION['id'] > 0) {
+if ($_GET['id']) {
+	$isLoggedIn = true;
+	echo $_GET['id'];
+	$user = getUser($_GET['id']);
+	echo $user['email'];
+}
+else if ($_SESSION['id'] > 0) {
 	$isLoggedIn = true;
 	$user = getUser($_SESSION['id']);
 
-	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
-	mysql_select_db("Contact_Barter");
-	$query = "SELECT * FROM UserData WHERE id = '".$_SESSION['id']."'";
-// 	if ($result = mysql_query($query, $link)) {
-// 		echo "num name rows: ".mysql_num_rows($result)."</br>";
-// 		$row = mysql_fetch_array($result);
-// 		echo ($row['firstName']);
-// 		echo "</br>";
-// 	}
 	echo $user['email'];
 }
 echo '<!Doctype html>

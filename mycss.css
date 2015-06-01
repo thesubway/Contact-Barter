@@ -109,6 +109,7 @@ clear:both;
 	width: 79%;
 	float:right;
 	border: 1px solid #000000;
+	min-height: 100px;
 }
 #searchContainer
 {
