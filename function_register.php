@@ -29,10 +29,9 @@ if(empty($_POST['userName']) ||
        empty($_POST['password']) ||
        empty($_POST['biography'])||
        empty($_POST['expertiseIn'])||
-       empty($_POST['lookingFor'])||
-       empty($_POST['contactDetails'])) {
+       empty($_POST['lookingFor'])) {
        //died('We are sorry, but there appears to be a problem with the form you submitted.');     
-       return "Please complete all fields";  
+       return "Please complete required fields";  
 }
 $sql = "SELECT * FROM UserData WHERE userName = '".$_POST['userName']."'";
 if ($result = mysql_query($sql)) {

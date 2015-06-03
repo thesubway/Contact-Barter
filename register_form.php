@@ -70,7 +70,7 @@ function validateForm()
 <div id="contactarea">
 <form name = "register" method="post" onsubmit="validateForm()">
 <br>
-*All fields are required.
+* - required field.
 <br>
 <br>
 *FIRST NAME: <input type="text" name = "firstName" value = "<?php echo $_POST['firstName']; ?>">
@@ -91,7 +91,7 @@ simplicity we assume it as basic “text” field -->
 <br><br>
 *LOOKING FOR: <input type="text" name = "lookingFor" value = "<?php echo $_POST['lookingFor']; ?>">
 <br><br>
-*CONTACT DETAILS: <input type="text" name = "contactDetails" value = "<?php echo $_POST['contactDetails']; ?>">
+CONTACT DETAILS: <input type="text" name = "contactDetails" value = "<?php echo $_POST['contactDetails']; ?>">
 <br><br>
 <input type = "submit" value = "submit">
 </form>
