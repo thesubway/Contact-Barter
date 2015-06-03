@@ -16,7 +16,7 @@ if ($_POST["name"]) {
 	$name = $_POST["name"];
 	$link = mysql_connect("localhost", "root","root","root") or die ("Could not connect to MySQL");
 	mysql_select_db("Contact_Barter");
-	$query = "SELECT * FROM UserData WHERE firstName='".$name."' OR lastName='".$name."' OR userName='".$name."'";
+	$query = "SELECT * FROM UserData WHERE firstName LIKE '%".$name."%' OR lastName LIKE '%".$name."%' OR userName LIKE '%".$name."%'";
 	if ($result = mysql_query($query, $link)) {
 		echo "num name rows: ".mysql_num_rows($result)."</br>";
 		while ($row = mysql_fetch_array($result)) {
@@ -52,6 +52,22 @@ else if ($_GET["skill"]) {
 }
 else {
 	echo "no one is searching";
+}
+function displayResults($error,$users) {
+	if ($error == nil) {
+		foreach ($users as $eachUser) {
+			echo		'<div id="result1">
+				<img id="user1" src="questionProfile.png" alt="profile image">
+				<div id="userText1"><a href="user.php?id='.$eachUser['id'].'">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years
+				<br>'.$eachUser["userName"].'<br>'.$eachUser["expertiseIn"].'
+				</div>
+			</div>
+			';
+		}
+	}
+	else {
+		echo "There was a connection error.";
+	}
 }
 //?name=dan&searchName=Search
 
@@ -96,38 +112,12 @@ echo '<!Doctype html>
 if ($name != nil) {			
 	echo		'<p>Result(s) for name: '.$name.':</p>
 			';
-	if ($error == nil) {
-		foreach ($users as $eachUser) {
-			echo		'<div id="result1">
-				<img id="user1" src="questionProfile.png" alt="profile image">
-				<div id="userText1"><a href="user.php?id='.$eachUser['id'].'">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years
-				<br>'.$eachUser["userName"].'<br>'.$eachUser["expertiseIn"].'
-				</div>
-			</div>
-			';
-		}
-	}
-	else {
-		echo "There was a connection error.";
-	}
+	displayResults($error,$users);
 }
 else if ($skill != nil) {
 	echo		'<p>Result(s) for skill: '.$skill.':</p>
 			';
-	if ($error == nil) {
-		foreach ($users as $eachUser) {
-			echo		'<div id="result1">
-				<img id="user1" src="questionProfile.png" alt="profile image">
-				<div id="userText1"><a href="user.php?id='.$eachUser['id'].'">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years
-				<br>'.$eachUser["userName"].'<br>'.$eachUser["expertiseIn"].'
-				</div>
-			</div>
-			';
-		}
-	}
-	else {
-		echo "There was a connection error.";
-	}
+	displayResults($error,$users);
 }
 			echo'
 		</div>
