@@ -34,7 +34,12 @@ if(empty($_POST['userName']) ||
 $sql = "INSERT INTO UserData (firstName, lastName, email,userName,password,biography,expertiseIn,lookingFor,contactDetails)
 VALUES ('$firstName','$lastName','$emailAddress','$userName','$password','$biography','$expertiseIn','$lookingFor','$contactDetails')";
 if (mysql_query($sql) === TRUE) {
-    echo "New record created successfully";
+//     echo "New record created successfully";
+    echo "New record created successfully! <script>
+	window.setTimeout(function(){
+		window.location.href='login.php';
+    }, 750);
+</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
