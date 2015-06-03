@@ -21,30 +21,29 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-
-if(empty($_POST['userName']) ||
-       empty($_POST['lastName']) ||
-       empty($_POST['emailAddress']) ||
-       empty($_POST['firstName']) ||
-       empty($_POST['password']) ||
-       empty($_POST['biography'])||
-       empty($_POST['expertiseIn'])||
-       empty($_POST['lookingFor'])) {
+$postParams = array('userName','lastName','emailAddress','firstName','password','biography','expertiseIn','lookingFor');
+foreach ($postParams as $eachParameter) {
+if(empty($_POST[$eachParameter])) {
        //died('We are sorry, but there appears to be a problem with the form you submitted.');     
-       return "Please complete required fields";  
+       return "Please enter ".$eachParameter;  
+}
 }
 $sql = "SELECT * FROM UserData WHERE userName = '".$_POST['userName']."'";
 if ($result = mysql_query($sql)) {
-	if (mysql_num_rows($result) != 0) {
+	if ((mysql_num_rows($result) != 0) && !($_SESSION['id'] > 0)) {
 		return 'Sorry, username "'.$_POST['userName'].'" has already been taken.';
 	}
 }
 else {
 	return "connection failed";
 }
-
-$sql = "INSERT INTO UserData (firstName, lastName, email,userName,password,biography,expertiseIn,lookingFor,contactDetails)
+if (!$_SESSION['id'] > 0) {
+	$sql = "INSERT INTO UserData (firstName, lastName, email,userName,password,biography,expertiseIn,lookingFor,contactDetails)
 VALUES ('$firstName','$lastName','$emailAddress','$userName','$password','$biography','$expertiseIn','$lookingFor','$contactDetails')";
+}
+else {
+	$sql = "UPDATE `UserData` SET `email`='$emailAddress',`userName`='$userName',`firstName`='$firstName',`lastName`='$lastName',`password`='$password',`biography`='$biography',`expertiseIn`='$expertiseIn',`lookingFor`='$lookingFor',`contactDetails`='$contactDetails' WHERE userName = '".$_POST['userName']."'";
+}
 if (mysql_query($sql) === TRUE) {
 //     echo "New record created successfully";
     echo " <script>

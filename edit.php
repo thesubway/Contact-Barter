@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'functions.php';
+require_once 'function_register.php';
 $isLoggedIn = false;
 $user = nil;
 if (!$_SESSION['id']>0) {
@@ -8,6 +9,16 @@ if (!$_SESSION['id']>0) {
 exit();
 }
 else if ($_SESSION['id'] > 0) {
+	if ($_POST['submit']) {
+		$user = getUser($_SESSION['id']);
+		$_POST['userName'] = $user['userName'];
+		echo "register called.";
+		$result = doRegister();
+		if ($result != '') {
+			$errorMessage = $result;
+			echo "<script>alert('".$errorMessage."');</script>";
+		}
+	}
 	$isLoggedIn = true;
 	$user = getUser($_SESSION['id']);
 
@@ -51,9 +62,11 @@ echo			'</ul>
 			<form name="edit" method="post">
 			<img id="userimgid" src="questionProfile.png" alt="userpic">';
 			echo '
-			'.'<br><b>Username: '.$user['userName'].' (Cannot change)<b><br><br>'.'
+			'.'<br><b>Username: <label name="userName" value="'.$user['userName'].'"></label> (Cannot change)<b><br><br>'.'
+			<h3>Old Password: </h3><br>
+			<input name="password" type="password" value='.$user['password'].'></input>
 			<h3> Contact Details</h3>
-			<input type="text" value='.$user['email'].'></input>
+			<input name="emailAddress" type="text" value='.$user['email'].'></input>
 			</div>
 			
 			<div id="infoid">
@@ -75,7 +88,13 @@ echo			'</ul>
 				<h4>Looking to learn:</h4>
 				<p>
 					<textarea name="lookingFor" type="text" >'.$user['lookingFor'].'</textarea>
-				</p>'.'
+				</p>
+				<h4>Contact details:</h4>
+				<p>
+					<textarea name="contactDetails" type="text" >'.$user['contactDetails'].'</textarea>
+				</p>
+				<input name="submit" type="submit" value="submit"></input>
+				'.'
 				
 			</div>
 			</form>
