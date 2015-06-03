@@ -47,7 +47,7 @@ function validateForm()
 }
 </script>
 
-<title>Contact Barter</title>
+<title>Register Form</title>
 <link rel="stylesheet" type="text/css" href="mycss.css"/>
 </head>
 
@@ -65,12 +65,12 @@ function validateForm()
 			</ul>
 		</div>
 </div>
-
-
+<br>
+<h2>Register Form</h2>
 <div id="contactarea">
 <form name = "register" method="post" onsubmit="validateForm()">
 <br>
-<br>
+*All fields are required.
 <br>
 <br>
 *FIRST NAME: <input type="text" name = "firstName" value = "<?php echo $_POST['firstName']; ?>">

@@ -13,7 +13,7 @@ $errorMessage = $result;
 ?>
 <html>
 <head>
-<title>Contact Barter</title>
+<title>Barter Password Helper</title>
 <link rel="stylesheet" type="text/css" href="../mycss.css"/>
 </head>
 

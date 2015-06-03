@@ -74,7 +74,7 @@ function displayResults($error,$users) {
 echo '<!Doctype html>
 <html>
 <head>
-<title>SearchSkills</title>
+<title>Barter SearchSkills</title>
 <link rel="stylesheet" type="text/css" href="mycss.css"/>
 <script type="text/javascript">
 
