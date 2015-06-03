@@ -84,7 +84,7 @@ echo			'</ul>
 
 	<div id="footer">
 	<hr>
-	<h5>Copyright © 2013,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
+	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
 </div>
 </body>

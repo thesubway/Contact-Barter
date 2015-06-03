@@ -96,6 +96,11 @@ simplicity we assume it as basic “text” field -->
 </form>
 </div>
 </div>
+
+<div id="footer">
+	
+	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
+</div>
 </body>
 
 </html>

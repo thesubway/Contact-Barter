@@ -78,8 +78,8 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 					<br>
 					
 					<br>
-					<a href="#ForgotPassword">Forgot Password?</a>
-					<a href="#NewUser"> | New User?</a>
+					<a href="forgotPass/pageforgotpwd.php">Forgot Password?</a>
+					<a href="register_form.php"> | New User?</a>
 				</p>
 				</div>
 		
@@ -87,7 +87,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 
 	<div id="footer">
 	
-	<h5>Copyright © 2013,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
+	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
 </div>
 </body>

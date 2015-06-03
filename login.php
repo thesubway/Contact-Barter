@@ -87,7 +87,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 
 	<div id="footer">
 	
-	<h5>Copyright © 2013,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
+	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
 </div>
 </body>
