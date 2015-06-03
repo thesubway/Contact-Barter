@@ -33,7 +33,16 @@ if(empty($_POST['userName']) ||
        empty($_POST['contactDetails'])) {
        //died('We are sorry, but there appears to be a problem with the form you submitted.');     
        return "Please complete all fields";  
-   }
+}
+$sql = "SELECT * FROM UserData WHERE userName = '".$_POST['userName']."'";
+if ($result = mysql_query($sql)) {
+	if (mysql_num_rows($result) != 0) {
+		return 'Sorry, username "'.$_POST['userName'].'" has already been taken.';
+	}
+}
+else {
+	return "connection failed";
+}
 
 $sql = "INSERT INTO UserData (firstName, lastName, email,userName,password,biography,expertiseIn,lookingFor,contactDetails)
 VALUES ('$firstName','$lastName','$emailAddress','$userName','$password','$biography','$expertiseIn','$lookingFor','$contactDetails')";
