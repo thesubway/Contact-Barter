@@ -8,6 +8,7 @@ if (isset($_POST['userName'])) {
 $result = doRegister();
 if ($result != '') {
 $errorMessage = $result;
+echo "<script>alert('".$errorMessage."');</script>";
 }
 }
 ?>
@@ -72,25 +73,25 @@ function validateForm()
 <br>
 <br>
 <br>
-*FIRST NAME: <input type="text" name = "firstName" >
+*FIRST NAME: <input type="text" name = "firstName" value = "<?php echo $_POST['firstName']; ?>">
 <br><br>
-*LAST NAME: <input type="text" name = "lastName" >
+*LAST NAME: <input type="text" name = "lastName" value = "<?php echo $_POST['lastName']; ?>">
 <br><br>
-*EMAIL ADDRESS: <input type="text" name = "emailAddress" >
+*EMAIL ADDRESS: <input type="text" name = "emailAddress" value = "<?php echo $_POST['emailAddress']; ?>">
 <br><br>
-*USERNAME: <input type="text" name = "userName" >
+*USERNAME: <input type="text" name = "userName" value = "<?php echo $_POST['userName']; ?>">
 <br><br>
 <!-- The following input box accepts password hence type should be “password” but for
 simplicity we assume it as basic “text” field -->
-*PASSWORD: <input type="password" name = "password" >
+*PASSWORD: <input type="password" name = "password">
 <br><br>
-*BIOGRAPHY: <input type="text" name = "biography" >
+*BIOGRAPHY: <input type="text" name = "biography" value = "<?php echo $_POST['biography']; ?>">
 <br><br>
-*EXPERTISE: <input type="text" name = "expertiseIn" >
+*EXPERTISE: <input type="text" name = "expertiseIn" value = "<?php echo $_POST['expertiseIn']; ?>">
 <br><br>
-*LOOKING FOR: <input type="text" name = "lookingFor" >
+*LOOKING FOR: <input type="text" name = "lookingFor" value = "<?php echo $_POST['lookingFor']; ?>">
 <br><br>
-*CONTACT DETAILS: <input type="text" name = "contactDetails" >
+*CONTACT DETAILS: <input type="text" name = "contactDetails" value = "<?php echo $_POST['contactDetails']; ?>">
 <br><br>
 <input type = "submit" value = "submit">
 </form>

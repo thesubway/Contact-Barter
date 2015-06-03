@@ -26,16 +26,21 @@ if(empty($_POST['userName']) ||
        empty($_POST['lastName']) ||
        empty($_POST['emailAddress']) ||
        empty($_POST['firstName']) ||
-       empty($_POST['password'])) {
+       empty($_POST['password']) ||
+       empty($_POST['biography'])||
+       empty($_POST['expertiseIn'])||
+       empty($_POST['lookingFor'])||
+       empty($_POST['contactDetails'])) {
        //died('We are sorry, but there appears to be a problem with the form you submitted.');     
-       return false;  
+       return "Please complete all fields";  
    }
 
 $sql = "INSERT INTO UserData (firstName, lastName, email,userName,password,biography,expertiseIn,lookingFor,contactDetails)
 VALUES ('$firstName','$lastName','$emailAddress','$userName','$password','$biography','$expertiseIn','$lookingFor','$contactDetails')";
 if (mysql_query($sql) === TRUE) {
 //     echo "New record created successfully";
-    echo "New record created successfully! <script>
+    echo " <script>
+    alert('New record created successfully!');
 	window.setTimeout(function(){
 		window.location.href='login.php';
     }, 750);
