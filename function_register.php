@@ -10,8 +10,12 @@ $password = $_POST['password'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $emailAddress = $_POST['emailAddress'];
+$biography = $_POST['biography'];
+$expertiseIn = $_POST['expertiseIn'];
+$lookingFor = $_POST['lookingFor'];
+$contactDetails = $_POST['contactDetails'];
 // Create connection
-$conn = new mysqli($servername,$dbName, $userName, $password,$firstName,$lastName,$emailAddress);
+$conn = new mysqli($servername,$dbName, $userName, $password,$firstName,$lastName,$emailAddress,$biography,$expertiseIn,$lookingFor,$contactDetails);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -27,8 +31,8 @@ if(empty($_POST['userName']) ||
        return false;  
    }
 
-$sql = "INSERT INTO UserData (firstName, lastName, email,userName,password)
-VALUES ('$firstName','$lastName','$emailAddress','$userName','$password')";
+$sql = "INSERT INTO UserData (firstName, lastName, email,userName,password,biography,expertiseIn,lookingFor,contactDetails)
+VALUES ('$firstName','$lastName','$emailAddress','$userName','$password','$biography','$expertiseIn','$lookingFor','$contactDetails')";
 if (mysql_query($sql) === TRUE) {
     echo "New record created successfully";
 } else {

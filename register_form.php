@@ -84,6 +84,14 @@ function validateForm()
 simplicity we assume it as basic “text” field -->
 *PASSWORD: <input type="password" name = "password" >
 <br><br>
+*BIOGRAPHY: <input type="text" name = "biography" >
+<br><br>
+*EXPERTISE: <input type="text" name = "expertiseIn" >
+<br><br>
+*LOOKING FOR: <input type="text" name = "lookingFor" >
+<br><br>
+*CONTACT DETAILS: <input type="text" name = "contactDetails" >
+<br><br>
 <input type = "submit" value = "submit">
 </form>
 </div>

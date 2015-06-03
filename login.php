@@ -71,7 +71,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 					<br>
 					<!-- The following input box accepts password hence type should be ÒpasswordÓ but for
 					simplicity we assume it as basic ÒtextÓ field -->
-					PASSWORD <input type="text" name = "password" >
+					PASSWORD <input type="password" name = "password" >
 					<input type = "submit" value = "submit">
 					</form>
 					<br>

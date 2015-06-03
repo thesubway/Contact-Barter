@@ -84,7 +84,8 @@ echo '<!Doctype html>
 			<a href="searchskills.php?skill=cooking"><u>cooking</u></a><br>
 			<a href="searchskills.php?skill=cleaning"><u>cleaning</u></a><br>
 			<a href="searchskills.php?skill=programming"><u>programming</u></a><br>
-			<a href="searchskills.php?skill=dancing"><u>dancing</u></a>
+			<a href="searchskills.php?skill=dancing"><u>dancing</u></a><br>
+			<a href="searchskills.php?skill=piano"><u>piano</u></a>
 		</div>
 		<div id="rightSearchbar">
 			<form method="post">
