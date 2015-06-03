@@ -41,7 +41,10 @@ echo '<!Doctype html>
 				<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</a></li>
 				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>';
 if ($_SESSION['id'] > 0) {
-echo '			<li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';				
+echo	'			<li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';	
+if (!$_GET['id']) {
+	echo '			<li><a href="edit.php" style="text-decoration:none; color:green">Edit</a></li>';
+}
 }
 else {
 echo '			<li><a href="login.php" style="text-decoration:none">Login</a></li>';	
