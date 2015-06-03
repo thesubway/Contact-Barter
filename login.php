@@ -78,7 +78,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 					<br>
 					
 					<br>
-					<a href="#ForgotPassword">Forgot Password?</a>
+					<a href="forgotPass/pageforgotpwd.php">Forgot Password?</a>
 					<a href="register_form.php"> | New User?</a>
 				</p>
 				</div>
