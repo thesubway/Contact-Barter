@@ -27,11 +27,11 @@ echo '<!Doctype html>
 
 </head>
 <body>
-	
+<div id="main">
 <!-- 	<div id="div1"> -->
 	<div id="topid">
 		<img id="logoid" src="images/logo.jpg" alt="logo">
-		<div id="hmenu">
+		<div id="hmenu" style="width:45%;">
 			<ul>
 				<li><a href="home.html" style="text-decoration:none">Home</a></li>
 				<li><a href="about.html" style="text-decoration:none">About</a></li>
@@ -39,7 +39,7 @@ echo '<!Doctype html>
 				<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</a></li>
 				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>';
 if ($_SESSION['id'] > 0) {
-echo	'			<br><li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';	
+echo	'			<li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';	
 	if (!$_GET['id']) {
 		echo '			<li><a href="edit.php" style="text-decoration:none; color:green">Edit</a></li>';
 	}
@@ -88,7 +88,7 @@ echo			'</ul>
 	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
 </div>
-
+</div>
 </body>
 
 </html>';

@@ -106,7 +106,7 @@ echo '<!Doctype html>
 		</div>
 		<div id="rightSearchbar">
 			<form method="post">
-				<label id="searchLabel" for="name">Search by name:</label>
+				<label id="searchLabel" for="name">Search by name:</label><br>
 				<input name="name" type='.'text'.'></input>
 				<input type="submit" name="searchName" value="Search">
 			</form>';
