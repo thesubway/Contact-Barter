@@ -102,7 +102,9 @@ echo '<!Doctype html>
 			<a href="searchskills.php?skill=cleaning"><u>cleaning</u></a><br>
 			<a href="searchskills.php?skill=programming"><u>programming</u></a><br>
 			<a href="searchskills.php?skill=dancing"><u>dancing</u></a><br>
-			<a href="searchskills.php?skill=piano"><u>piano</u></a>
+			<a href="searchskills.php?skill=piano"><u>piano</u></a><br>
+			<a href="searchskills.php?skill=building"><u>building</u></a><br>
+			<a href="searchskills.php?skill=teaching"><u>teaching</u></a>
 		</div>
 		<div id="rightSearchbar">
 			<form method="post">
