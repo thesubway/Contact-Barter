@@ -18,6 +18,7 @@ $errorMessage = $result;
 </head>
 
 <body>
+<div id="main">
 <div id="contact_main">
 	
 	<div id="topid">
@@ -36,7 +37,8 @@ $errorMessage = $result;
 		<div id="contactarea">
 
 		<p>Hey there! <br>
-		<br>It is unfortunate that you forgot your password! Type in your username and we will send an email to your registered email address. </p>
+		<br>It is unfortunate that you forgot your password!<br>
+		Type in your username and we will send an email to your registered email address. </p>
 		
 		<form name = "forgot" method="post">
 USERNAME *<input type="text" name = "userName" >
@@ -50,6 +52,6 @@ USERNAME *<input type="text" name = "userName" >
 
 </div>
 
-
+</div>
 </body>
 </html>

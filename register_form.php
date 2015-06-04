@@ -52,6 +52,7 @@ function validateForm()
 </head>
 
 <body>
+<div id="main">
 <div id="regmain">
 <div id="topid">
         <img id="logoid" src="logo.jpg" alt="logo" text="Barter">
@@ -98,9 +99,11 @@ CONTACT DETAILS: <input type="text" name = "contactDetails" value = "<?php echo 
 </div>
 </div>
 
+<br><br>
 <div id="footer">
 	
 	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
+</div>
 </div>
 </body>
 
