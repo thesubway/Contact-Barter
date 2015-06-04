@@ -64,7 +64,7 @@ div#loginid{ border:#000 1px solid; border-radius: 25px;}
 	
 				
 				<div id="loginid">
-				<img id="loginLogoId" src="loginIcon.png" alt="loginLogo">
+				<img id="loginLogoId" src="images/loginIcon.png" alt="loginLogo">
 				<p>
 					<b>Incorrect Username/password</b>
 					<form name = "login" method="post">
