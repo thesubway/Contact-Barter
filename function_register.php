@@ -46,12 +46,18 @@ else {
 }
 if (mysql_query($sql) === TRUE) {
 //     echo "New record created successfully";
+	$success = "New record created successfully!";
+	if ($_SESSION['id'] > 0) {
+		$success = "Record updated succcessfully!";
+	}
     echo " <script>
-    alert('New record created successfully!');
-	window.setTimeout(function(){
+    alert('".$success."');";
+if (!$_SESSION['id'] > 0) {
+echo "window.setTimeout(function(){
 		window.location.href='login.php';
-    }, 750);
-</script>";
+    }, 750); "; 
+}
+echo "</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
