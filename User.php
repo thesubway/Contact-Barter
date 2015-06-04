@@ -30,7 +30,7 @@ echo '<!Doctype html>
 
 </head>
 <body>
-	<div id= "main">
+	
 <!-- 	<div id="div1"> -->
 	<div id="topid">
 		<img id="logoid" src="logo.jpg" alt="logo">
@@ -91,7 +91,7 @@ echo			'</ul>
 	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
 </div>
-</div>
+
 </body>
 
 </html>';

@@ -82,6 +82,7 @@ echo '<!Doctype html>
 
 </head>
 <body>
+<div id="main">
 	<div id="topid">
         <img id="logoid" src="logo.jpg" alt="logo" text="Barter">
 		<div id="hmenu">
@@ -131,6 +132,7 @@ else if ($skill != nil) {
 			return document.getElementById(x);
 		}
 	</script>
+</div>
 </body>
 </html>';
 ?>
