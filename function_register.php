@@ -14,12 +14,18 @@ $biography = $_POST['biography'];
 $expertiseIn = $_POST['expertiseIn'];
 $lookingFor = $_POST['lookingFor'];
 $contactDetails = $_POST['contactDetails'];
+$passwordOld = $_POST['passwordOld'];
 // Create connection
 $conn = new mysqli($servername,$dbName, $userName, $password,$firstName,$lastName,$emailAddress,$biography,$expertiseIn,$lookingFor,$contactDetails);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+// in case user is editing, and does not enter new password:
+if (($password == "") && ($_SESSION['id'] > 0)) {
+		$password = $_SESSION['password'];
+		$_POST['password'] = $password;
+}
 
 $postParams = array('userName','lastName','emailAddress','firstName','password','biography','expertiseIn','lookingFor');
 foreach ($postParams as $eachParameter) {
@@ -42,6 +48,9 @@ if (!$_SESSION['id'] > 0) {
 VALUES ('$firstName','$lastName','$emailAddress','$userName','$password','$biography','$expertiseIn','$lookingFor','$contactDetails')";
 }
 else {
+	if ($passwordOld != $_SESSION['password']) {
+		return "Old password is incorrect.";
+	}
 	$sql = "UPDATE `UserData` SET `email`='$emailAddress',`userName`='$userName',`firstName`='$firstName',`lastName`='$lastName',`password`='$password',`biography`='$biography',`expertiseIn`='$expertiseIn',`lookingFor`='$lookingFor',`contactDetails`='$contactDetails' WHERE userName = '".$_POST['userName']."'";
 }
 if (mysql_query($sql) === TRUE) {
@@ -49,6 +58,7 @@ if (mysql_query($sql) === TRUE) {
 	$success = "New record created successfully!";
 	if ($_SESSION['id'] > 0) {
 		$success = "Record updated succcessfully!";
+		$_SESSION['password'] = $password;
 	}
     echo " <script>
     alert('".$success."');";

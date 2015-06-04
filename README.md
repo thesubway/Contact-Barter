@@ -17,5 +17,14 @@ After you enter in your username, you will receive
 an email that tells you your password. Also, you
 will be redirected to the login page again.
 8.After logging in, you will be redirected to the "User"
-page again.
-9.
+page again, which shows your public information.
+9.In the User page, you will notice that in the top-right,
+you now have two new options, "Logout" and "Edit".
+10.When editing the page:
+-You must enter your old password
+to make any changes.
+-All non-password fields are automatically
+filled out with your current information.
+-Required fields are marked with * symbol.
+-Leaving the new password blank means no changes
+to old password.

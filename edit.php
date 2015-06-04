@@ -60,30 +60,34 @@ echo			'</ul>
 			<form name="edit" method="post">
 			<img id="userimgid" src="images/questionProfile.png" alt="userpic">';
 			echo '
-			'.'<br><br><b>Username: <label name="userName" value="'.$user['userName'].'">'.$user['userName'].'</label> (Cannot change)<b><br><br>'.'
-			<h3>Old Password: </h3><br>
-			<input name="password" type="password" value='.$user['password'].'></input>
-			<h3> Contact Details</h3>
+			'.'<br><br>* - required field<br><br><b>Username: <label name="userName" value="'.$user['userName'].'">'.$user['userName'].'</label> (Cannot change)<b><br><br>'.'
+			<h4>*Old Password (must enter old password to make any changes): </h4>
+			<input name="passwordOld" type="password" ></input>
+			
+			<h4>New Password (If this is blank, old password is kept): </h4>
+			<input name="password" type="password" ></input>
+			
+			<h3>*Email address</h3>
 			<input name="emailAddress" type="text" value='.$user['email'].'></input>
 			</div>
 			
 			<div id="infoid">
-			<label for="firstName"><h4>First Name</h4></label>
+			<label for="firstName"><h4>*First Name</h4></label>
 			<input name="firstName" type="text" value='.$user['firstName'].'></input><br>
-			<label for="lastName"><h4>Last Name</h4></label>
+			<label for="lastName"><h4>*Last Name</h4></label>
 			<input name="lastName" type="text" value='.$user['lastName'].'></input>
 			
-				<h4>About</h4>
+				<h4>*Biography (About)</h4>
 				<p>
 					<textarea name="biography" type="text" >'.$user['biography'].'</textarea>
 				</p>
 				
-				<h4>Expertise:</h4>
+				<h4>*Expertise In:</h4>
 				<p>
 					<textarea name="expertiseIn" type="text" >'.$user['expertiseIn'].'</textarea>
 				</p>
 				
-				<h4>Looking to learn:</h4>
+				<h4>*Looking for:</h4>
 				<p>
 					<textarea name="lookingFor" type="text" >'.$user['lookingFor'].'</textarea>
 				</p>

@@ -17,6 +17,7 @@ if(dbNumRows($result) > 0){
 // print 'Welcome '.$row['userName'];
 session_start();
 $_SESSION['id'] = $row['id'];
+$_SESSION['password'] = $password;
 header("Location: user.php"); /* Redirect browser */
 exit();
 }
