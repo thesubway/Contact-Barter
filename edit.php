@@ -35,6 +35,7 @@ echo '<!Doctype html>
 
 </head>
 <body>
+<div id="main">
 <!-- 	<div id="div1"> -->
 	<div id="topid">
 		<img id="logoid" src="logo.jpg" alt="logo">
@@ -46,10 +47,10 @@ echo '<!Doctype html>
 				<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</a></li>
 				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>';
 if ($_SESSION['id'] > 0) {
-echo '			<li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';				
+echo '			<br><li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';				
 }
 else {
-echo '			<li><a href="login.php" style="text-decoration:none">Login</a></li>';	
+echo '			<br><li><a href="login.php" style="text-decoration:none">Login</a></li>';	
 }
 echo			'</ul>
 		</div>
@@ -105,6 +106,7 @@ echo			'</ul>
 	<hr>
 	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
+</div>
 </div>
 </body>
 

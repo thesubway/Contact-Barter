@@ -38,11 +38,12 @@ else {
 <link rel="stylesheet" type="text/css" href="mycss.css"/>
 <style>
 div#contentBarter{ border:#000 1px solid; padding:10px 40px 40px 40px; border-color:#0C8DA6;}
-div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 25px;}			
+div#loginid{ border:#000 1px solid; border-radius: 25px;}			
 </style>
 </head>
 
 <body>
+<div id = "main">
 <div id="div50">
 	<div id="topid">
 		<img id="logoid" src="logo.jpg" alt="logo">
@@ -72,6 +73,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 					<!-- The following input box accepts password hence type should be ÒpasswordÓ but for
 					simplicity we assume it as basic ÒtextÓ field -->
 					PASSWORD <input type="password" name = "password" >
+					<br>
 					<input type = "submit" value = "submit">
 					</form>
 					<br>
@@ -89,6 +91,7 @@ div#loginid{ border:#000 1px solid; padding:10px 40px 40px 40px;border-radius: 2
 	
 	<h5>Copyright &copy 2015,designed by <a href="#123" style="color: #E00000"> Barter</a> | <a href="#123" style="color: #E00000"> Privacy Policy</a></h5>
 	</div>
+</div>
 </div>
 </body>
 
