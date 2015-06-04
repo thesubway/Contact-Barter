@@ -56,7 +56,7 @@ function displayResults($error,$users) {
 	if ($error == nil) {
 		foreach ($users as $eachUser) {
 			echo		'<div id="result1">
-				<img id="user1" src="questionProfile.png" alt="profile image">
+				<img id="user1" src="images/questionProfile.png" alt="profile image">
 				<div id="userText1"><a href="user.php?id='.$eachUser['id'].'">'.$eachUser["firstName"].' '.$eachUser["lastName"].'</a><br>5 years
 				<br>'.$eachUser["userName"].'<br>'.$eachUser["expertiseIn"].'
 				</div>
@@ -84,7 +84,7 @@ echo '<!Doctype html>
 <body>
 <div id="main">
 	<div id="topid">
-        <img id="logoid" src="logo.jpg" alt="logo" text="Barter">
+        <img id="logoid" src="images/logo.jpg" alt="logo" text="Barter">
 		<div id="hmenu">
 		<ul>
 		<li><a href="home.html" style="text-decoration:none">Home</a></li>

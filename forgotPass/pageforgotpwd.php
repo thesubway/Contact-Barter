@@ -22,7 +22,7 @@ $errorMessage = $result;
 <div id="contact_main">
 	
 	<div id="topid">
-        <img id="logoid" src="../logo.jpg" alt="logo" text="Barter">
+        <img id="logoid" src="../images/logo.jpg" alt="logo" text="Barter">
 		<div id="hmenu">
 			<ul>
 			<li><a href="../home.html" style="text-decoration:none">Home</a></li>

@@ -46,7 +46,7 @@ div#loginid{ border:#000 1px solid; border-radius: 25px;}
 <div id = "main">
 <div id="div50">
 	<div id="topid">
-		<img id="logoid" src="logo.jpg" alt="logo">
+		<img id="logoid" src="images/logo.jpg" alt="logo">
 
 	
 		<div id="hmenu">

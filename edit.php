@@ -35,7 +35,7 @@ echo '<!Doctype html>
 <body>
 <!-- 	<div id="div1"> -->
 	<div id="topid">
-		<img id="logoid" src="logo.jpg" alt="logo">
+		<img id="logoid" src="images/logo.jpg" alt="logo">
 		<div id="hmenu">
 			<ul>
 				<li><a href="home.html" style="text-decoration:none">Home</a></li>
@@ -58,7 +58,7 @@ echo			'</ul>
 	
 			<div id="sideSecId">
 			<form name="edit" method="post">
-			<img id="userimgid" src="questionProfile.png" alt="userpic">';
+			<img id="userimgid" src="images/questionProfile.png" alt="userpic">';
 			echo '
 			'.'<br><b>Username: <label name="userName" value="'.$user['userName'].'"></label> (Cannot change)<b><br><br>'.'
 			<h3>Old Password: </h3><br>
