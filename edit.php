@@ -60,7 +60,7 @@ echo			'</ul>
 			<form name="edit" method="post">
 			<img id="userimgid" src="images/questionProfile.png" alt="userpic">';
 			echo '
-			'.'<br><b>Username: <label name="userName" value="'.$user['userName'].'"></label> (Cannot change)<b><br><br>'.'
+			'.'<br><br><b>Username: <label name="userName" value="'.$user['userName'].'">'.$user['userName'].'</label> (Cannot change)<b><br><br>'.'
 			<h3>Old Password: </h3><br>
 			<input name="password" type="password" value='.$user['password'].'></input>
 			<h3> Contact Details</h3>

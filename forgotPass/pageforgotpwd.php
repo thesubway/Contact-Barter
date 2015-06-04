@@ -9,6 +9,9 @@ $result = doLogin();
 if ($result != '') {
 $errorMessage = $result;
 }
+else {
+	$message = $result;
+}
 }
 ?>
 <html>

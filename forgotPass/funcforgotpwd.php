@@ -14,8 +14,13 @@ $result = dbQuery($sql);
 $row = dbFetchAssoc($result);
 //validate if resultset is empty; if empty then the user credentials does not matched
 if(dbNumRows($result) > 0){
-print 'Sent email to '.$row['email'];
-
+$sentEmail = 'Sent email to '.$row['email'];
+echo " <script>
+    alert('".$sentEmail."');
+	window.setTimeout(function(){
+		window.location.href='../login.php';
+    }, 750);
+</script>";
 
 
 $email_to = $row['email'];
@@ -34,8 +39,8 @@ $headers = 'From: '.$email_from."\r\n".
 
 }
 else{
-$errorMessage = 'We have no user registered with this username!';
- print $errorMessage . ' ' . $sql; 
+$errorMessage = 'We have no user registered with username: '.$_POST['userName'];
+echo "<script>alert('".$errorMessage."');</script>";
 }
 return $errorMessage;
 }

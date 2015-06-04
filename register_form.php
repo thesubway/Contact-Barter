@@ -74,25 +74,25 @@ function validateForm()
 * - required field.
 <br>
 <br>
-*FIRST NAME: <input type="text" name = "firstName" value = "<?php echo $_POST['firstName']; ?>">
+*FIRST NAME: <input type="text" name = "firstName" value = "<?php echo $_POST['firstName']; ?>"></input>
 <br><br>
-*LAST NAME: <input type="text" name = "lastName" value = "<?php echo $_POST['lastName']; ?>">
+*LAST NAME: <input type="text" name = "lastName" value = "<?php echo $_POST['lastName']; ?>"></input>
 <br><br>
-*EMAIL ADDRESS: <input type="text" name = "emailAddress" value = "<?php echo $_POST['emailAddress']; ?>">
+*EMAIL ADDRESS: <input type="text" name = "emailAddress" value = "<?php echo $_POST['emailAddress']; ?>"></input>
 <br><br>
-*USERNAME: <input type="text" name = "userName" value = "<?php echo $_POST['userName']; ?>">
+*USERNAME: <input type="text" name = "userName" value = "<?php echo $_POST['userName']; ?>"></input>
 <br><br>
 <!-- The following input box accepts password hence type should be “password” but for
 simplicity we assume it as basic “text” field -->
-*PASSWORD: <input type="password" name = "password">
+*PASSWORD: <input type="password" name = "password"></input>
 <br><br>
-*BIOGRAPHY: <input type="text" name = "biography" value = "<?php echo $_POST['biography']; ?>">
+*BIOGRAPHY: <textarea type="text" name = "biography" value = "<?php echo $_POST['biography']; ?>"></textarea>
 <br><br>
-*EXPERTISE: <input type="text" name = "expertiseIn" value = "<?php echo $_POST['expertiseIn']; ?>">
+*EXPERTISE: <textarea type="text" name = "expertiseIn" value = "<?php echo $_POST['expertiseIn']; ?>"></textarea>
 <br><br>
-*LOOKING FOR: <input type="text" name = "lookingFor" value = "<?php echo $_POST['lookingFor']; ?>">
+*LOOKING FOR: <textarea type="text" name = "lookingFor" value = "<?php echo $_POST['lookingFor']; ?>"></textarea>
 <br><br>
-CONTACT DETAILS: <input type="text" name = "contactDetails" value = "<?php echo $_POST['contactDetails']; ?>">
+CONTACT DETAILS: <textarea type="text" name = "contactDetails" value = "<?php echo $_POST['contactDetails']; ?>"></textarea>
 <br><br>
 <input type = "submit" value = "submit">
 </form>
