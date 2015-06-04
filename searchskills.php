@@ -7,10 +7,10 @@ $users = array();
 session_start();
 // session_destroy();
 if($_SESSION['id'] <= 0) {
-	echo "currently no session id";
+// 	echo "currently no session id";
 }
 else {
-	echo "session id: ".$_SESSION['id']."<br>";
+// 	echo "session id: ".$_SESSION['id']."<br>";
 }
 if ($_POST["name"]) {
 	$name = $_POST["name"];
@@ -18,7 +18,6 @@ if ($_POST["name"]) {
 	mysql_select_db("Contact_Barter");
 	$query = "SELECT * FROM UserData WHERE firstName LIKE '%".$name."%' OR lastName LIKE '%".$name."%' OR userName LIKE '%".$name."%'";
 	if ($result = mysql_query($query, $link)) {
-		echo "num name rows: ".mysql_num_rows($result)."</br>";
 		while ($row = mysql_fetch_array($result)) {
 			array_push($users,$row);
 		}
@@ -30,7 +29,8 @@ if ($_POST["name"]) {
 	else {
 		#$myError = mysql_error();
 		$error = "Query failed.";
-		echo "\nquery not working: ".mysql_error();
+		$errorMessage = "\nquery not working: ".mysql_error();
+		echo "<script>alert('".$errorMessage."');</script>";
 	}
 	
 }
@@ -40,18 +40,17 @@ else if ($_GET["skill"]) {
 	mysql_select_db("Contact_Barter");
 	$query = "SELECT * FROM UserData WHERE expertiseIn LIKE '%".$skill."%'";
 	if ($result = mysql_query($query, $link)) {
-		echo "num skill rows: ".mysql_num_rows($result)."</br>";
 		while ($row = mysql_fetch_array($result)) {
 			array_push($users,$row);
 		}
 	}
 	else {
 		$error = "Query failed.";
-		echo "\nquery not working: ".mysql_error();
+		$errorMessage = "\nquery not working: ".mysql_error();
+		echo "<script>alert('".$errorMessage."');</script>";
 	}
 }
 else {
-	echo "no one is searching";
 }
 function displayResults($error,$users) {
 	if ($error == nil) {
@@ -66,7 +65,8 @@ function displayResults($error,$users) {
 		}
 	}
 	else {
-		echo "There was a connection error.";
+		$errorMessage = "There was a connection error.";
+		echo "<script>alert('".$errorMessage."');</script>";
 	}
 }
 //?name=dan&searchName=Search

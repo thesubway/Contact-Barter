@@ -12,7 +12,6 @@ else if ($_SESSION['id'] > 0) {
 	if ($_POST['submit']) {
 		$user = getUser($_SESSION['id']);
 		$_POST['userName'] = $user['userName'];
-		echo "register called.";
 		$result = doRegister();
 		if ($result != '') {
 			$errorMessage = $result;
@@ -22,7 +21,6 @@ else if ($_SESSION['id'] > 0) {
 	$isLoggedIn = true;
 	$user = getUser($_SESSION['id']);
 
-	echo $user['email'];
 }
 echo '<!Doctype html>
 <html>

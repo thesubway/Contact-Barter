@@ -9,15 +9,12 @@ exit();
 }
 if ($_GET['id']) {
 	$isLoggedIn = true;
-	echo $_GET['id'];
 	$user = getUser($_GET['id']);
-	echo $user['email'];
 }
 else if ($_SESSION['id'] > 0) {
 	$isLoggedIn = true;
 	$user = getUser($_SESSION['id']);
 
-	echo $user['email'];
 }
 echo '<!Doctype html>
 <html>
