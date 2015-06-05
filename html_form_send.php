@@ -9,10 +9,14 @@ if(isset($_POST['email'])) {
      
     function died($error) {
         // your error code can go here
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-        echo "These errors appear below.<br /><br />";
-        echo $error."<br /><br />";
-        echo "Please go back and fix these errors.<br /><br />";
+        $errorMessage = "We are very sorry, but there were error(s) found with the form you submitted. "."These errors appear below.\n
+        \n".$error."\n\n"."Please go back and fix these errors.\n";
+//         echo $errorMessage;
+echo " <script>
+alert('$error');
+window.setTimeout(function(){
+		window.history.back();
+    }, 100); </script>";
         die();
     }
      
@@ -34,17 +38,17 @@ if(isset($_POST['email'])) {
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
   if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+    $error_message .= 'The Email Address you entered does not appear to be valid.\n';
   }
     $string_exp = "/^[A-Za-z .'-]+$/";
   if(!preg_match($string_exp,$first_name)) {
-    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+    $error_message .= 'The First Name you entered does not appear to be valid.\n';
   }
   if(!preg_match($string_exp,$last_name)) {
-    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+    $error_message .= 'The Last Name you entered does not appear to be valid.\n';
   }
   if(strlen($comments) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    $error_message .= 'The Comments you entered do not appear to be valid.\n';
   }
   if(strlen($error_message) > 0) {
     died($error_message);
@@ -67,14 +71,18 @@ if(isset($_POST['email'])) {
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
+@mail($email_to, $email_subject, $email_message, $headers);
+echo " <script>
+alert('Thank you for contacting us. We will be in touch with you very soon.');
+window.setTimeout(function(){
+		window.location.href='contact_barter.html';
+    }, 100); </script>";
 ?>
- 
-<!-- place your own success html below -->
- 
-Thank you for contacting us. We will be in touch with you very soon.
+  
+<!-- Thank you for contacting us. We will be in touch with you very soon. -->
  
 <?php
 }
+
 die();
 ?>
