@@ -35,7 +35,7 @@ echo '<!Doctype html>
 <body>
 <!-- 	<div id="div1"> -->
 <div id="main" style="height:850px;">
-	<div id="topid">
+	<div id="topid" style="width:1418px;">
 		<img id="logoid" src="images/logo.jpg" alt="logo">
 		<div id="hmenu" style="width:45%;">
 			<ul>
@@ -45,7 +45,7 @@ echo '<!Doctype html>
 				<li><a href="searchskills.php" style="text-decoration:none">SearchSkills</a></li>
 				<li><a href="contact_barter.html" style="text-decoration:none">Contact</a></li>';
 if ($_SESSION['id'] > 0) {
-echo '			<li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';				
+echo '			<br><li><a href="logout.php" style="text-decoration:none; color:red">Logout</a></li>';				
 }
 else {
 echo '			<li><a href="login.php" style="text-decoration:none">Login</a></li>';	
